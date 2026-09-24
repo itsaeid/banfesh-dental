@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+
+@theme {
+
+  /* Brand Colors */
+
+  --color-primary-50: #f2f6f5;
+  --color-primary-100: #dde8e5;
+  --color-primary-200: #bfd4ce;
+  --color-primary-300: #94b7ad;
+  --color-primary-400: #6f988c;
+  --color-primary-500: #52796f;
+  --color-primary-600: #42655d;
+  --color-primary-700: #36534d;
+  --color-primary-800: #2d4440;
+  --color-primary-900: #263936;
+
+
+  /* Medical Theme */
+
+  --color-background: #f8f7f2;
+
+  --color-surface: #ffffff;
+
+  --color-secondary: #354f52;
+
+  --color-accent: #c9a96e;
+
+  --color-text: #1f2927;
+
+  --color-muted: #6b7c78;
+
+
+
+  /* Shadows */
+
+  --shadow-soft:
+    0 10px 40px rgba(82,121,111,0.12);
+
+
+
+  /* Radius */
+
+  --radius-card: 1.25rem;
+
+}
+
+
+/* Global */
+
+:root {
+
+  --primary:#52796f;
+  --background:#f8f7f2;
+
+}
+
+
+html {
+
+  scroll-behavior:smooth;
+
+}
+
+
+body {
+
+  background: var(--background);
+  color: var(--color-text);
+
+}
