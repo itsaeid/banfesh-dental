@@ -1,8 +1,7 @@
+
 @import "tailwindcss";
 
-
 @theme {
-
   /* Brand Colors */
 
   --color-primary-50: #f2f6f5;
@@ -16,14 +15,13 @@
   --color-primary-800: #2d4440;
   --color-primary-900: #263936;
 
-
   /* Medical Theme */
 
   --color-background: #f8f7f2;
 
   --color-surface: #ffffff;
 
-  --color-secondary: #354f52;
+  --color-secondary: #cad2c5;
 
   --color-accent: #c9a96e;
 
@@ -31,42 +29,87 @@
 
   --color-muted: #6b7c78;
 
-
-
   /* Shadows */
 
-  --shadow-soft:
-    0 10px 40px rgba(82,121,111,0.12);
-
-
+  --shadow-soft: 0 10px 40px rgba(82, 121, 111, 0.12);
 
   /* Radius */
 
   --radius-card: 1.25rem;
-
 }
 
+@layer components {
+
+  .btn-primary {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    background-color: var(--primary);
+    color:white;
+    padding-left:0.5rem;
+    padding-right:1.5rem;
+    padding-top:0.5rem;
+    padding-bottom:0.5rem;
+    border-radius:9999px;
+    font-weight:500;
+    transition:all .3s ease;
+    cursor:pointer;
+
+  }
+
+
+  .btn-primary:hover {
+    filter:brightness(.95);
+  }
+
+
+  .btn-primary .btn-icon {
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:3rem;
+    height:3rem;
+
+    border-radius:9999px;
+
+    background:white;
+    color:var(--primary);
+
+  }
+
+
+  .btn-primary .btn-icon svg {
+
+    transition:transform .3s ease;
+
+  }
+
+
+  .btn-primary:hover .btn-icon svg {
+
+    transform:rotate(-45deg);
+
+  }
+
+}
 
 /* Global */
 
 :root {
-
-  --primary:#52796f;
-  --background:#f8f7f2;
-
+  --primary: #52796f;
+  --secondary: #cad2c5;
+  --background: #f8f7f2;
 }
-
 
 html {
-
-  scroll-behavior:smooth;
-
+  scroll-behavior: smooth;
 }
 
-
 body {
-
   background: var(--background);
   color: var(--color-text);
-
 }
