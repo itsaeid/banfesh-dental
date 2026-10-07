@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { ArrowUpLeft, Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
+import PrimaryButton from "../ui/PrimaryButton";
 
 const menus = ["خدمات", "نمونه کارها", "درباره ما", "تماس با ما"];
 export default function Navbar() {
@@ -25,68 +26,29 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 right-0 left-0
-                z-30 
-                transition-all duration-300
-                ${scrolled ? "bg-background" : "bg-transparent"}`}
+        className={`fixed top-0 right-0 left-0 z-100 transition-all duration-300 ${scrolled ? "bg-background" : "bg-transparent"}`}
       >
-        <div
-          className="
-        max-w-7xl mx-auto hidden md:flex
-        px-6 h-25
-        items-center justify-between
-        direction-rtl"
-        >
-            {/* logo  */}
+        <div className="direction-rtl mx-auto hidden h-25 max-w-7xl items-center justify-between px-6 md:flex">
+          {/* logo  */}
           <div
-            className={`px-3 py-2
-         text-3xl font-light tracking-widest
-        ${scrolled ? "text-primary-900" : "text-white"}`}
+            className={`px-3 py-2 text-3xl font-light tracking-widest ${scrolled ? "text-primary-900" : "text-white"}`}
           >
             B-Dental
           </div>
           {/* menu  */}
-          <nav
-            className={`
-                hidden md:flex
-                gap-10 items-center
-                ${scrolled ? "text-primary-900" : "text-white"}`}
-          >
+          <nav className={`hidden items-center gap-10 md:flex ${scrolled ? "text-primary-900" : "text-white"}`}>
             {menus.map((item) => (
-              <a
-                key={item}
-                className="hover: text-primary
-                                transition"
-                href="#"
-              >
+              <a key={item} className="hover: text-primary transition" href="#">
                 {item}
               </a>
             ))}
           </nav>
           {/* appoinment button  */}
-          <button
-            className="
-                 btn-primary group"
-          >
-            <span>رزرو نوبت </span>
-            <ArrowUpLeft
-              className="
-              bg-white
-              rounded-full
-              text-primary-900
-              
-                transition-transform
-                duration-300
-                group-hover:-rotate-45"
-            />
-          </button>
+         <PrimaryButton text="رزرو نوبت" />
         </div>
 
         {/* mobile  */}
-        <div
-          className="md:hidden flex items-center
-        gap-5 orfder-2"
-        >
+        <div className="order-2 flex items-center gap-5 md:hidden">
           <button onClick={toggle}>
             <Menu />
           </button>

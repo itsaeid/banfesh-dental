@@ -1,5 +1,5 @@
-
 @import "tailwindcss";
+
 
 @theme {
   /* Brand Colors */
@@ -39,62 +39,65 @@
 }
 
 @layer components {
+  .btn-secondary{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    background-color: var(--secondary);
+    color: var(--color-text);
+    padding-left: 0.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 9999px;
+    border-color: var(--primary);
+    border-width: 1px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
 
   .btn-primary {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1.25rem;
     background-color: var(--primary);
-    color:white;
-    padding-left:0.5rem;
-    padding-right:1.5rem;
-    padding-top:0.5rem;
-    padding-bottom:0.5rem;
-    border-radius:9999px;
-    font-weight:500;
-    transition:all .3s ease;
-    cursor:pointer;
-
+    color: white;
+    padding-left: 0.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
   }
-
 
   .btn-primary:hover {
-    filter:brightness(.95);
+    filter: brightness(0.95);
   }
-
 
   .btn-primary .btn-icon {
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    width:3rem;
-    height:3rem;
-
-    border-radius:9999px;
-
-    background:white;
-    color:var(--primary);
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background: white;
+    color: var(--primary);
   }
-
 
   .btn-primary .btn-icon svg {
-
-    transition:transform .3s ease;
-
+    transition: transform 0.3s ease;
   }
-
 
   .btn-primary:hover .btn-icon svg {
-
-    transform:rotate(-45deg);
-
+    transform: rotate(-45deg);
   }
-
 }
 
 /* Global */
@@ -112,4 +115,20 @@ html {
 body {
   background: var(--background);
   color: var(--color-text);
+}
+
+@keyframes rotate-circle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate-circle {
+  animation: rotate-circle 22s linear infinite;
+  transform-origin: center center;
+  will-change: transform;
 }
