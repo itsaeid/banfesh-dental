@@ -3,7 +3,7 @@
 import { useMenuStore } from "@/store/menuStore";
 import { useEffect, useState } from "react";
 import Logo from "./Logo";
-import { ArrowUpLeft, Menu } from "lucide-react";
+import {  Menu } from "lucide-react";
 import MobileMenu from "./MobileMenu";
 import PrimaryButton from "../ui/PrimaryButton";
 
@@ -48,12 +48,15 @@ export default function Navbar() {
         </div>
 
         {/* mobile  */}
-        <div className="order-2 flex items-center gap-5 md:hidden">
-          <button onClick={toggle}>
-            <Menu />
+        <div className="order-2 flex justify-between items-center gap-5 md:hidden">
+          <button className="pr-3" onClick={toggle}>
+            <Menu className={`${scrolled ? "text-primary-900" : "text-white"
+            }`} />
           </button>
-          <div>
-            <Logo />
+          <div
+            className={`px-3 py-2 text-3xl font-light tracking-widest ${scrolled ? "text-primary-900" : "text-white"}`}
+          >
+            B-Dental
           </div>
         </div>
       </header>
